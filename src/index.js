@@ -66,7 +66,7 @@
  }
 
   //adressAPI scripts
-  async function success(position) {
+  async function success() {
     const apiKey = 'pk.eyJ1IjoianVudGEiLCJhIjoiY2t6eTVjb3FvMDBmdDJwbWx3N2h6ZWRtMCJ9.AxccJaxPcaqaot9HiUlnEg';
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/4.428022493438946,51.211614879653794.json?access_token=pk.eyJ1IjoianVudGEiLCJhIjoiY2t6eTVjb3FvMDBmdDJwbWx3N2h6ZWRtMCJ9.AxccJaxPcaqaot9HiUlnEg`;
     //const url = `https://api.mapbox.com/geocoding/v5/{mapbox.places}/${position.coords.longitude},${position.coords.latitude}.json`;
@@ -88,14 +88,4 @@
     }
   }
 
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-
-  const geolocationOptions = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
-
-  navigator.geolocation.getCurrentPosition(success, error, geolocationOptions);
+  success();
