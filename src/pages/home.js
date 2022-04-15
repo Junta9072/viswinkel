@@ -1,39 +1,13 @@
 import './reset.css';
 import './styles.css';
 
-//Navigo//
-import Navigo from 'navigo'; // When using ES modules.
+import loadPage from './loadPage';
 
-let navigation = null;
+export default async function initalizePage() {
+  await loadPage('/pages/home.htm');
 
-export function navigate(page) {
-  if (navigation) {
-    navigation.navigate(page);
-  }
+  console.log('Home');
 }
-
-export default function init(pages) {
-  navigation = new Navigo('/');
-
-  navigation.on('/', pages.home);
-  navigation.on('/contact', pages.contact);
-  navigation.notFound(pages.notFound);
-
-  navigation.resolve();
-}
-
-//import contact from './app/pages/contact';
-import home from './pages/home';
-//import notFound from './app/pages/not-found';
-
-init({ home });
-
-/*document.querySelector('#navigation-home').onclick = () => {
-  navigate('');
-};
-document.querySelector('#navigation-contact').onclick = () => {
-  navigate('contact');
-};*/
 
 ///////////SWIPER//////////////
 
