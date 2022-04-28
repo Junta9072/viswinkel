@@ -1,0 +1,8 @@
+html,
+body,
+#content {
+  height: 100%;
+  background-color: var(--white);
+  font-size: 16px;
+  font-family: sans-serif;
+}
